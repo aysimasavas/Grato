@@ -13,4 +13,8 @@
     <color name="search_background">#e3f2fd</color>
     <color name="home_background">#bbdefb</color>
     <color name="settings_background">#90caf9</color>
+    <color name="add_fab_color">#c8e6c9</color>
+    <color name="search_fab_color">#a5d6a7</color>
+    <color name="calender_fab_color">#81c784</color>
+    <color name="settings_fab_color">#66bb6a</color>
 </resources>

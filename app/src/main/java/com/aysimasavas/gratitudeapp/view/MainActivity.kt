@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this,"searc",Toast.LENGTH_LONG).show()
         }
+        calendar_button.setOnClickListener {
+
+            Toast.makeText(this,"cal",Toast.LENGTH_LONG).show()
+        }
         settings_button.setOnClickListener {
 
             Toast.makeText(this,"sett",Toast.LENGTH_LONG).show()
@@ -61,12 +65,14 @@ class MainActivity : AppCompatActivity() {
 
         {
             search_button.visibility= View.VISIBLE
+            calendar_button.visibility= View.VISIBLE
             settings_button.visibility= View.VISIBLE
 
         }
         else
         {
             search_button.visibility= View.INVISIBLE
+            calendar_button.visibility= View.INVISIBLE
             settings_button.visibility= View.INVISIBLE
 
         }
@@ -80,6 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         {
             search_button.startAnimation(fromBottom)
+            calendar_button.startAnimation(fromBottom)
             settings_button.startAnimation(fromBottom)
             add_button.startAnimation(rotateOpen)
 
@@ -87,6 +94,7 @@ class MainActivity : AppCompatActivity() {
         else
         {
             search_button.startAnimation(toBottom)
+            calendar_button.startAnimation(toBottom)
             settings_button.startAnimation(toBottom)
             add_button.startAnimation(rotateOpen)
         }
@@ -97,12 +105,14 @@ class MainActivity : AppCompatActivity() {
         if(!clicked)
         {
             search_button.isClickable=true
+            calendar_button.isClickable=true
             settings_button.isClickable=true
 
         }
         else
         {
             search_button.isClickable=false
+            calendar_button.isClickable=false
             settings_button.isClickable=false
         }
     }
