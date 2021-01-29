@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home_dest">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home_dest"
         android:name="com.aysimasavas.gratitudeapp.view.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_noteFragment"
-            app:destination="@id/noteFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"
+        >
+
     </fragment>
+
     <fragment
-        android:id="@+id/noteFragment"
-        android:name="com.aysimasavas.gratitudeapp.view.NoteFragment"
-        android:label="NoteFragment" >
-        <action
-            android:id="@+id/action_noteFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
+        android:id="@+id/settings_dest"
         android:name="com.aysimasavas.gratitudeapp.view.SettingsFragment"
-        android:label="SettingsFragment" >
-        <action
-            android:id="@+id/action_settingsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+
     </fragment>
 </navigation>
