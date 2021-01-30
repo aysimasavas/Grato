@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
 
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.HomeFragment">
@@ -13,9 +14,98 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="HOME FRAGMENTT"
-        android:textSize="40sp">
+        android:text="HOME"
+        android:textSize="40sp"
+        tools:ignore="MissingConstraints">
 
     </TextView>
-</FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="32dp"
+        android:scaleType="fitCenter"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/add_fab_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+        app:backgroundTint="#C8E6C9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_menu"
+        app:tint="@null" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/search_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="32dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/search_fab_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        android:tint="@color/white"
+        android:visibility="invisible"
+        app:backgroundTint="@color/search_fab_color"
+
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toEndOf="@+id/add_button"
+
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        app:tint="@null" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settings_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="32dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/settings_fab_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        android:tint="@color/white"
+        android:visibility="invisible"
+        app:backgroundTint="@color/settings_fab_color"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/calendar_button"
+        app:layout_constraintEnd_toEndOf="@+id/calendar_button"
+
+        app:srcCompat="@drawable/ic_baseline_settings_24"
+        app:tint="@null" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/calendar_button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:fabCustomSize="64dp"
+        app:maxImageSize="32dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/calender_fab_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        android:tint="@color/white"
+        android:visibility="invisible"
+        app:backgroundTint="@color/calender_fab_color"
+
+        app:layout_constraintBottom_toTopOf="@+id/search_button"
+        app:layout_constraintEnd_toEndOf="@+id/search_button"
+
+        app:srcCompat="@drawable/ic_calen"
+        app:tint="@null" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
