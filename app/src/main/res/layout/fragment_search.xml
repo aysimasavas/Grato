@@ -4,17 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.SearchFragment">
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.SearchFragment">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="search fragment"
-        android:textSize="40sp"></TextView>
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="392dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp" />
 
-</FrameLayout>
+
+            </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="456dp"
+            android:layout_below="@id/searchView"
+            android:layout_marginTop="53dp"
+            android:overScrollMode="never"
+            tools:ignore="NotSibling" />
+
+
+    </RelativeLayout>
 </layout>

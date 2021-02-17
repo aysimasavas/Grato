@@ -1,10 +1,7 @@
 package com.aysimasavas.gratitudeapp.service
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.aysimasavas.gratitudeapp.model.NoteModel
 
 @Dao
@@ -12,19 +9,32 @@ interface NoteDao {
 
 
     @Insert
-    fun insertAll(vararg notes:NoteModel):List<Long>
+    fun insertAll(vararg notes:NoteModel)
 
 
     @Query("SELECT * FROM notemodel")
     fun getAllNotes(): List<NoteModel>
 
 
-    @Query("SELECT * FROM notemodel WHERE uuid= :notesId")
-    fun getNotes(notesId:Int): NoteModel
+    @Query("SELECT * FROM notemodel WHERE date= :mDate")
+    fun getNotes(mDate:String): NoteModel
 
 
     @Delete
     fun deleteNotes(notes:NoteModel)
+
+
+    @Update
+    fun updateNotes(notes: NoteModel)
+
+    @Query("SELECT * FROM notemodel WHERE note LIKE :note")
+    fun getSearchResults(note : String) : List<NoteModel>
+
+    @Query("SELECT * FROM notemodel WHERE date LIKE :date")
+    fun getSearchResultsForDate(date : String) : List<NoteModel>
+
+
+
 
 
 }

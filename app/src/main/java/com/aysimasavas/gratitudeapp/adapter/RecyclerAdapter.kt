@@ -29,10 +29,6 @@ class RecyclerAdapter (private val noteList: ArrayList<NoteModel>,private val li
                 listener.onItemClick(noteModel,it)
             }
 
-           // val simpleDate=SimpleDateFormat("dd MM yyyy")
-
-
-            //itemView.note_date_text.text=simpleDate.format(noteModel.date)
             itemView.note_date_text.text=noteModel.date
             itemView.gratitude_text.text=noteModel.note
 

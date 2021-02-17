@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -9,12 +10,12 @@
         android:id="@+id/note_date_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="31 Ocak 2021"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:paddingStart="30dp"
+        android:paddingStart="20dp"
         android:paddingTop="30dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:text="12 02 2021"
+        android:textSize="20sp"
+        android:textStyle="bold">
 
     </TextView>
 
@@ -22,15 +23,14 @@
         android:id="@+id/gratitude_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bugün....minnettarım"
-        android:textSize="20sp"
+        android:text="@string/TodayQuestionsString"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:paddingStart="30dp"
+        android:paddingStart="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="20dp">
 
     </TextView>
-
 
 
 </LinearLayout>

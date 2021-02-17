@@ -28,6 +28,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/searchFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -58,5 +61,14 @@
         <argument
             android:name="year"
             app:argType="integer" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+
+        <argument
+            android:name="note"
+            app:argType="string" />
+
+
     </fragment>
 </navigation>

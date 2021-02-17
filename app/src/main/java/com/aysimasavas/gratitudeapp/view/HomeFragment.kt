@@ -1,9 +1,9 @@
 package com.aysimasavas.gratitudeapp.view
 
 import android.annotation.SuppressLint
-import android.app.DatePickerDialog
 import android.app.Dialog
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
 import android.widget.Toast
@@ -24,27 +23,29 @@ import com.aysimasavas.gratitudeapp.adapter.RecyclerAdapter
 import com.aysimasavas.gratitudeapp.helpers.DateFormatHelper
 import com.aysimasavas.gratitudeapp.model.NoteModel
 import com.aysimasavas.gratitudeapp.service.NoteDatabase
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.calender_layout.*
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.text.DateFormat
+import kotlinx.android.synthetic.main.fragment_note.*
 import java.util.*
-import javax.xml.datatype.DatatypeConstants.MONTHS
 import kotlin.collections.ArrayList
 
+@Suppress("DEPRECATION")
 class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
 
     private var noteModels:ArrayList<NoteModel>?=null
     private var recyclerAdapter:RecyclerAdapter?=null
 
-
+    
     private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_open_anim)}
     private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_close_anim)}
     private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.from_bottom_anim)}
     private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.to_bottom_anim)}
 
     private var clicked=false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +57,6 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -66,17 +66,16 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
         super.onViewCreated(view, savedInstanceState)
 
+        getQuotations()
+
         val layoutManager: RecyclerView.LayoutManager=LinearLayoutManager(this.context)
-
         recyclerView.layoutManager=layoutManager
-
         noteModels= ArrayList()
-
-
         val db= context?.let { NoteDatabase.invoke(it?.applicationContext) }
-
         noteModels=db?.noteDao()?.getAllNotes() as ArrayList<NoteModel>
 
+
+        getTodayNote(db)
 
 
 
@@ -84,34 +83,46 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
             it.date?.let { it1 -> DateFormatHelper().stringToDate(it1) }
         }
-
+        
         val aList=ArrayList(sortedList)
-
-
         recyclerAdapter=aList?.let { RecyclerAdapter( it,this@HomeFragment) }
-
         recyclerView.adapter=recyclerAdapter
 
 
 
+        addButtonClick()
+        searchButtonClick()
+        settingButtonClick()
+        calendarButtonClick()
+
+    }
+
+
+    private fun addButtonClick()
+    {
+
         add_button.setOnClickListener {
             onAddButtonClicked()
         }
+    }
 
+    private fun settingButtonClick()
+    {
         settings_button.setOnClickListener {
             val action=HomeFragmentDirections.actionHomeFragmentToSettingsFragment()
             Navigation.findNavController(it).navigate(action)
             clicked=false
         }
 
+    }
 
-        search_button.setOnClickListener {
-            val action=HomeFragmentDirections.actionHomeFragmentToSearchFragment()
-            Navigation.findNavController(it).navigate(action)
-            clicked=false
-        }
 
+
+    private fun calendarButtonClick()
+    {
         calendar_button.setOnClickListener {
+
+            onCalendarClicked()
 
             val dialog = activity?.let { it1 -> Dialog(it1) }
             dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -119,6 +130,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
             dialog?.setCancelable(false)
             dialog?.setContentView(R.layout.calender_layout)
+            dialog?.window?.setBackgroundDrawable(ColorDrawable(this.resources.getColor(android.R.color.transparent)))
+
 
             val calendarView1=dialog?.findViewById(R.id.calendarView2) as CalendarView
 
@@ -129,12 +142,9 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
             calendarView1.setOnDateChangeListener { view, year, month, dayOfMonth ->
 
-                val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(dayOfMonth,month,year)
+                val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(dayOfMonth,month,year,"new","")
                 Navigation.findNavController(it).navigate(action)
 
-                val msg = "Selected date is " + dayOfMonth + "/" + (month + 1) + "/" + year
-
-                Toast.makeText(this.context, msg, Toast.LENGTH_SHORT).show()
                 dialog.dismiss()
 
                 clicked=false
@@ -149,12 +159,51 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
 
         }
+    }
 
+
+    private fun searchButtonClick()
+    {
+
+        search_button.setOnClickListener {
+            val action=HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+            Navigation.findNavController(it).navigate(action)
+            clicked=false
+        }
 
 
     }
 
 
+    private fun setInvisible(clicked: Boolean)
+    {
+        if(!clicked)
+
+        {
+            search_button.visibility= View.INVISIBLE
+            calendar_button.visibility= View.INVISIBLE
+            settings_button.visibility= View.INVISIBLE
+
+        }
+        else
+        {
+
+            search_button.visibility= View.VISIBLE
+            calendar_button.visibility= View.VISIBLE
+            settings_button.visibility= View.VISIBLE
+
+
+        }
+
+    }
+
+    private fun onCalendarClicked()
+    {
+        setInvisible(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked=!clicked
+    }
 
     private fun onAddButtonClicked()
     {
@@ -182,7 +231,6 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         }
 
     }
-
 
 
 
@@ -227,13 +275,71 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
         val mArgs= noteModel.date?.let { DateFormatHelper().stringToCalendar(it) }
 
-        val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(mArgs!!.get(Calendar.DAY_OF_MONTH),
+        val action= noteModel.note?.let {
+            HomeFragmentDirections.actionHomeFragmentToNoteFragment(mArgs!!.get(Calendar.DAY_OF_MONTH),
                 mArgs.get(Calendar.MONTH),
-                mArgs.get(Calendar.YEAR))
+                mArgs.get(Calendar.YEAR),"old", it)
+        }
 
-        Navigation.findNavController(view).navigate(action)
-        Toast.makeText(this.context,"clicked",Toast.LENGTH_LONG).show()
+        action?.let { Navigation.findNavController(view).navigate(it) }
+
+        clicked=false
+
     }
 
+
+    @SuppressLint("SetTextI18n")
+    private fun getTodayNote(database: NoteDatabase)
+    {
+
+        var noteModelToday:NoteModel
+
+        val calendar= Calendar.getInstance()
+
+        noteModelToday=database.noteDao().getNotes(DateFormatHelper().calendarToString(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR)))
+
+        if(noteModelToday==null)
+        {
+            noteModelToday= NoteModel(DateFormatHelper().calendarToString(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR)),"")
+            note_date_text_home.text=noteModelToday.date
+            gratitude_text_home.text="bugün ne için minnettarsın?"
+
+
+        }
+
+        else{
+
+            note_date_text_home.text=noteModelToday.date
+            gratitude_text_home.text=noteModelToday.note
+
+
+        }
+
+
+        linearLayoutRow.setOnClickListener {
+
+            val mArgs= noteModelToday.date?.let { DateFormatHelper().stringToCalendar(it) }
+
+            val action= noteModelToday.note?.let {
+                HomeFragmentDirections.actionHomeFragmentToNoteFragment(mArgs!!.get(Calendar.DAY_OF_MONTH),
+                        mArgs.get(Calendar.MONTH),
+                        mArgs.get(Calendar.YEAR),"today", it)
+            }
+
+            if (action != null) {
+                Navigation.findNavController(it).navigate(action)
+            }
+            clicked=false
+
+        }
+    }
+
+    private fun getQuotations()
+    {
+        val quotations = resources.getStringArray(R.array.quotations)
+        val randomQuotations=quotations.random()
+
+        text_home.text=randomQuotations
+    }
 }
 

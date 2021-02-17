@@ -4,49 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/calender_custom"
     android:orientation="vertical"
     app:layout_constraintCircleRadius="20dp">
 
 
     <CalendarView
         android:id="@+id/calendarView2"
-        android:layout_width="355dp"
-        android:layout_height="373dp"
-        android:background="@drawable/calender_custom"
-        android:scrollbarThumbHorizontal="@color/purple_200"
-        android:scrollbarThumbVertical="@color/purple_500"
+        android:layout_width="320dp"
+        android:layout_height="365dp"
+
+
+        android:backgroundTint="@color/black"
+        android:dateTextAppearance="@style/CalenderViewDateCustomText"
         android:scrollbarTrackHorizontal="@color/black"
-        android:scrollbarTrackVertical="@color/purple_200"
         android:selectedDateVerticalBar="@color/home_color_icon"
         android:selectedWeekBackgroundColor="#FFFFFF"
+        android:theme="@style/CalenderViewCustom"
+        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
         android:weekSeparatorLineColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintVertical_bias="0.268"
+        tools:layout_editor_absoluteX="54dp" />
 
     <Button
         android:id="@+id/noBtn"
-        android:layout_width="133dp"
-        android:layout_height="39dp"
+        android:layout_width="99dp"
+        android:layout_height="26dp"
         android:layout_marginBottom="12dp"
-        android:textStyle="bold"
-        android:backgroundTint="@color/add_fab_color"
-        android:text="@string/iptal"
+        android:background="@drawable/button_custom"
+        android:backgroundTint="#E91E63"
+        android:text="@string/noButtonString"
+
         android:textColor="@color/white"
+        android:textColorLink="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calendarView2"
         app:layout_constraintEnd_toEndOf="@+id/calendarView2"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/calendarView2"
         tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textViewcal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="291dp"
-        tools:layout_editor_absoluteY="445dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

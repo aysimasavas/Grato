@@ -11,9 +11,15 @@ data class NoteModel(
         @ColumnInfo(name="date")
         var date:String?,
         @ColumnInfo(name="note")
-        val note:String?) {
+        var note:String?) {
 
     @PrimaryKey(autoGenerate = true)
     var uuid:Int=0
 
+
+    fun setText(str:String)
+    {
+        this.note=str
+
+    }
 }
