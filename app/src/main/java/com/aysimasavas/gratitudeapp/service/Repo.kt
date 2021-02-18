@@ -43,15 +43,11 @@ class Repo {
 
         }
 
-        fun search(note:String): List<NoteModel>?
+        fun search(context: Context,note:String): List<NoteModel>?
         {
+            noteDatabase= initialiseDB(context)
+
             return noteDatabase?.noteDao()?.getSearchResults(note)
-        }
-
-
-        fun searchDate(date:String): List<NoteModel>?
-        {
-            return noteDatabase?.noteDao()?.getSearchResults(date)
         }
 
     }

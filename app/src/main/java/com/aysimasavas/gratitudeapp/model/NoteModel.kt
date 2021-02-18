@@ -14,7 +14,7 @@ data class NoteModel(
         var note:String?) {
 
     @PrimaryKey(autoGenerate = true)
-    var uuid:Int=0
+    var uuid:Long=0L
 
 
     fun setText(str:String)

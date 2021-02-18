@@ -30,14 +30,9 @@ class NoteViewModel : ViewModel(){
     }
 
 
-    fun searchForItem(note:String):List<NoteModel>?
+    fun searchForItem(context: Context,note:String):List<NoteModel>?
     {
-       return Repo.search(note)
-    }
-
-    fun searchForDate(date:String):List<NoteModel>?
-    {
-        return Repo.search(date)
+       return Repo.search(context,note)
     }
 
 }

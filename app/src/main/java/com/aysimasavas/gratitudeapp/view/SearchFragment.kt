@@ -102,16 +102,8 @@ class SearchFragment : Fragment() ,RecyclerAdapter.Listener {
         searchText = "%$searchText%"
 
 
-        val list=noteViewModel.searchForItem(note = searchText)
-
-
-        Log.i("finnd ",list.toString())
-        Log.i("search ",searchText)
-
-
-
         noteModels?.clear()
-        noteViewModel.searchForItem(note = searchText)?.let { noteModels?.addAll(it) }
+        noteViewModel.searchForItem(this.requireContext(),note = searchText)?.let { noteModels?.addAll(it) }
 
         recyclerAdapter?.notifyDataSetChanged()
 

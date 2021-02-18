@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aysimasavas.gratitudeapp.R
+import com.aysimasavas.gratitudeapp.helpers.DateFormatHelper
 import com.aysimasavas.gratitudeapp.model.NoteModel
 import kotlinx.android.synthetic.main.row_time.view.*
 import java.text.SimpleDateFormat
@@ -29,7 +30,11 @@ class RecyclerAdapter (private val noteList: ArrayList<NoteModel>,private val li
                 listener.onItemClick(noteModel,it)
             }
 
-            itemView.note_date_text.text=noteModel.date
+
+            val dateTextStr=SimpleDateFormat("dd MMMM yyyy")
+                    .format(DateFormatHelper().stringToDate(noteModel.date.toString()))
+
+            itemView.note_date_text.text=dateTextStr
             itemView.gratitude_text.text=noteModel.note
 
 
@@ -48,4 +53,6 @@ class RecyclerAdapter (private val noteList: ArrayList<NoteModel>,private val li
     override fun getItemCount(): Int {
         return noteList.count()
     }
+
+
 }

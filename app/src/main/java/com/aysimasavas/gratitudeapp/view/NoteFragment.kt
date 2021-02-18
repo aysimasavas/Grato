@@ -67,6 +67,7 @@ class NoteFragment : Fragment() {
 
         dateText.text = DateFormatHelper().calendarToString(args.day, args.month, args.year)
         noteText.setText(noteModels!!.note)
+        //textChange()
 
         saveButton.setOnClickListener {
 
@@ -139,5 +140,20 @@ class NoteFragment : Fragment() {
 
 
     }
+//
+//    private fun textChange()
+//    {
+//        if(noteText.text.equals(""))
+//        {
+//            suggestionButton.visibility=View.VISIBLE
+//            shareButton.visibility=View.INVISIBLE
+//        }
+//        else
+//        {
+//            suggestionButton.visibility=View.INVISIBLE
+//            shareButton.visibility=View.VISIBLE
+//
+//        }
+//    }
 
 }

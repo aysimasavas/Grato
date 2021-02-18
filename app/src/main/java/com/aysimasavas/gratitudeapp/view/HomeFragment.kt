@@ -28,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.calender_layout.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_note.*
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -75,7 +76,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         noteModels=db?.noteDao()?.getAllNotes() as ArrayList<NoteModel>
 
 
-        getTodayNote(db)
+        val noteModelToday=getTodayNote(db)
 
 
 
@@ -85,6 +86,12 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         }
         
         val aList=ArrayList(sortedList)
+
+        if(!noteModelToday.date.equals(""))
+        {
+            aList.remove(noteModelToday)
+
+        }
         recyclerAdapter=aList?.let { RecyclerAdapter( it,this@HomeFragment) }
         recyclerView.adapter=recyclerAdapter
 
@@ -288,8 +295,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
     }
 
 
-    @SuppressLint("SetTextI18n")
-    private fun getTodayNote(database: NoteDatabase)
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
+    private fun getTodayNote(database: NoteDatabase):NoteModel
     {
 
         var noteModelToday:NoteModel
@@ -301,7 +308,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         if(noteModelToday==null)
         {
             noteModelToday= NoteModel(DateFormatHelper().calendarToString(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR)),"")
-            note_date_text_home.text=noteModelToday.date
+            note_date_text_home.text= SimpleDateFormat("dd MMMM yyyy")
+                    .format(DateFormatHelper().stringToDate(noteModelToday.date.toString()))
             gratitude_text_home.text="bugün ne için minnettarsın?"
 
 
@@ -309,7 +317,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
         else{
 
-            note_date_text_home.text=noteModelToday.date
+            note_date_text_home.text=SimpleDateFormat("dd MMMM yyyy")
+                    .format(DateFormatHelper().stringToDate(noteModelToday.date.toString()))
             gratitude_text_home.text=noteModelToday.note
 
 
@@ -332,6 +341,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
             clicked=false
 
         }
+
+        return noteModelToday
     }
 
     private fun getQuotations()

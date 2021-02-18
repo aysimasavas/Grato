@@ -27,12 +27,8 @@ interface NoteDao {
     @Update
     fun updateNotes(notes: NoteModel)
 
-    @Query("SELECT * FROM notemodel WHERE note LIKE :note")
+    @Query("SELECT * FROM notemodel WHERE note LIKE :note OR date LIKE :note")
     fun getSearchResults(note : String) : List<NoteModel>
-
-    @Query("SELECT * FROM notemodel WHERE date LIKE :date")
-    fun getSearchResultsForDate(date : String) : List<NoteModel>
-
 
 
 
