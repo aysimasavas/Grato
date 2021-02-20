@@ -7,6 +7,13 @@
     <string name="TodayQuestionsString">Bugün ne için minnettarsın?</string>
     <string name="QuestionsString">Ne için minnettardın?</string>
     <string name="minnettard_m">Minnettardım..</string>
+    <string name="kaydet">Kaydet</string>
+    <string name="connectMe">Bizimle iletişime geçin</string>
+    <string name="shareApp">Uygulamayı paylaşın</string>
+    <string name="scoreApp">Uygulamayı puanlayın</string>
+    <string name="uygulama_hakkinda">Uygulama Hakkında</string>
+    <string name="pinText">Pin koyarak notlarını gizleyebilirsin</string>
+    <string name="themeText">Birbirinden farklı tema seçenekleri</string>
 
     <string-array name="suggestion">
         <item>Hangi arkadaşın için minnetarsın?</item>
@@ -30,21 +37,21 @@
 
     <string-array name="quotations">
 
-        <item>"Hayatımın erken dönemlerinde öğrendim ki eğer bir şeyi istiyorsan,biraz gürültü yapsan iyi olur.” \n Malcolm X "</item>
-        <item>“İlk önce kendine ne olacağını sor; sonra ne yapmak gerekiyorsa yap.”\n Epiktetos</item>
-        <item>"Bazen bir anın gerçek değerini anı haline gelene kadar bilemezsiniz" \n Dr.Seuss </item>
-        <item>“Ne zaman ki güçlü olmak,tek çare olarak kalır; o zaman anlarsın ne kadar güçlü olduğunu.”\n Bob Marley</item>
-        <item>“Mucize, enerjinizi korkularınıza değil, rüyalarınıza verdiğiniz zaman başlar.” \n Richard Wilkins</item>
-        <item>"Minnettarlıkla yükselelim ve bizi kaplamasına izin verelim."\n Grace Gealey</item>
-        <item>“Ne istediğini bildiğinde ve bunu yeterince çok istediğinde, onu elde etmenin bir yolunu bulacaksın.”\n Jim Rohn</item>
-        <item>“Uçurtmalar rüzgar gücü ile değil, o güce karşı koydukları için yükselirler.” \n Winston Churchill</item>
-        <item>“Motivasyon düşünceden doğar. Gösterdiğiniz her davranışın öncesinde, o davranışı esinlendiren bir düşünce vardır.”\n Steve Chandler</item>
-        <item>“Aklın gücünden kuvvetli olan tek şey kalbin cesaretidir.” \n John F. Nash</item>
-        <item>"Dünyanın düşleyenlere de ihtiyacı var, yapanlara da, ama düşlediğini yapanlara daha çok ihtiyacı var"\n S.Breathnach</item>
-        <item>"İyiye odaklandığın zaman iyi,daha iyi olur"\nAbraham Hicks</item>
-        <item>"Tüm sanatların özü minnettarlıktır"\nNietzsche</item>
-        <item>"Minnettarlık,hafızanın akılda değil kalpte saklandığı zamandır"\nLionel Hampton</item>
-        <item>"Anılar,yalnızken kalbi sıcak tutmak için ruhumuzun deposunda hapsolmuş hazinelerdir." \n Becky Aligada</item>
+        <item>Hayatımın erken dönemlerinde öğrendim ki eğer bir şeyi istiyorsan,biraz gürültü yapsan iyi olur \n Malcolm X "</item>
+        <item>İlk önce kendine ne olacağını sor; sonra ne yapmak gerekiyorsa yap \n Epiktetos</item>
+        <item>Bazen bir anın gerçek değerini anı haline gelene kadar bilemezsiniz \n Dr.Seuss </item>
+        <item>Ne zaman ki güçlü olmak,tek çare olarak kalır; o zaman anlarsın ne kadar güçlü olduğunu \n Bob Marley</item>
+        <item>Mucize, enerjinizi korkularınıza değil, rüyalarınıza verdiğiniz zaman başlar \n Richard Wilkins</item>
+        <item>Minnettarlıkla yükselelim ve bizi kaplamasına izin verelim \n Grace Gealey</item>
+        <item>Ne istediğini bildiğinde ve bunu yeterince çok istediğinde, onu elde etmenin bir yolunu bulacaksın \n Jim Rohn</item>
+        <item>Motivasyon düşünceden doğar. Gösterdiğiniz her davranışın öncesinde, o davranışı esinlendiren bir düşünce vardır \n Steve Chandler</item>
+        <item>Aklın gücünden kuvvetli olan tek şey kalbin cesaretidir \n John F. Nash</item>
+        <item>Dünyanın düşleyenlere de ihtiyacı var, yapanlara da, ama düşlediğini yapanlara daha çok ihtiyacı var \n S.Breathnach</item>
+        <item>Uçurtmalar rüzgar gücü ile değil, o güce karşı koydukları için yükselirler \n Winston Churchill</item>
+        <item>İyiye odaklandığın zaman iyi,daha iyi olur \nAbraham Hicks</item>
+        <item>Tüm sanatların özü minnettarlıktır \nNietzsche</item>
+        <item>Minnettarlık,hafızanın akılda değil kalpte saklandığı zamandır \nLionel Hampton</item>
+        <item>Anılar,yalnızken kalbi sıcak tutmak için ruhumuzun deposunda hapsolmuş hazinelerdir \n Becky Aligada</item>
 
     </string-array>
 </resources>

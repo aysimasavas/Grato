@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_constraintCircleRadius="20dp">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="318dp"
+        android:layout_height="542dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/BackgroundLightColor"
+        android:columnCount="2"
+        android:rowCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/orangeCake"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/orange">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/violetGarden"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/purple">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/green"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/gren">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/deepBlue"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/blue">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sweetDreams"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/pink">
+
+        </ImageView>
+
+
+        <ImageView
+            android:id="@+id/sweetBrowny"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/brown">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/serenity"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/mint">
+
+        </ImageView>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

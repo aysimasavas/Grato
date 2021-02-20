@@ -8,15 +8,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeFragment">
+    tools:context=".view.HomeFragment"
+    android:background="?attr/BackgroundColorAll">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:padding="20dp"
         tools:ignore="MissingConstraints">
-
+        
 
         <LinearLayout
             android:id="@+id/linearLayoutRow"
@@ -26,41 +28,48 @@
             android:clickable="true"
             android:focusable="true">
 
-        <TextView
-            android:id="@+id/note_date_text_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingTop="30dp"
-            android:paddingBottom="20dp"
-            android:text="16 02 2021"
-            android:textSize="20sp"
-            android:textStyle="bold">
+            <TextView
+                android:id="@+id/note_date_text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/didact_gothic"
+                android:text="16 02 2021"
+                android:textColor="?attr/textColorAll"
+                android:textSize="20sp"
+                android:textStyle="bold">
 
-        </TextView>
+            </TextView>
 
         <TextView
             android:id="@+id/gratitude_text_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="20dp"
+            android:layout_margin="10dp"
+            android:textColor="?attr/textColorAll"
+            android:fontFamily="@font/didact_gothic"
             android:text="Bugün ne için minnettarsın?"
             android:textSize="16sp"
             android:textStyle="bold">
 
         </TextView>
         </LinearLayout>
+
+
         <TextView
             android:id="@+id/text_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayoutRow"
+            android:fontFamily="@font/marmelad"
+            android:padding="24dp"
+
             android:text="aaaaaaaa"
-            android:padding="16dp"
+
             android:textAlignment="center"
-            android:textSize="14sp"
-            android:layout_below="@id/linearLayoutRow">
+            android:textColor="?attr/textColorAll"
+            android:textSize="16sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -86,12 +95,12 @@
         app:maxImageSize="28dp"
         android:scaleType="fitCenter"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/add_fab_color"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="?attr/buttonColorAll"
         android:clickable="true"
         android:focusable="true"
         android:tint="@color/white"
-        app:backgroundTint="#C8E6C9"
+        app:backgroundTint="?attr/buttonColorAll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_menu"
@@ -104,14 +113,14 @@
         app:fabCustomSize="56dp"
         app:maxImageSize="28dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/search_fab_color"
+        android:backgroundTint="?attr/buttonColorAll"
         android:clickable="true"
         android:focusable="true"
         android:foregroundTint="@color/cardview_shadow_end_color"
         android:scaleType="fitCenter"
         android:tint="@color/white"
         android:visibility="invisible"
-        app:backgroundTint="@color/search_fab_color"
+        app:backgroundTint="?attr/buttonColorAll"
 
         app:layout_constraintBottom_toTopOf="@+id/add_button"
         app:layout_constraintEnd_toEndOf="@+id/add_button"
@@ -126,13 +135,13 @@
         app:fabCustomSize="56dp"
         app:maxImageSize="28dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/settings_fab_color"
+        android:backgroundTint="?attr/buttonColorAll"
         android:clickable="true"
         android:focusable="true"
         android:scaleType="fitCenter"
         android:tint="@color/white"
         android:visibility="invisible"
-        app:backgroundTint="@color/settings_fab_color"
+        app:backgroundTint="?attr/buttonColorAll"
         app:layout_constraintBottom_toTopOf="@+id/calendar_button"
         app:layout_constraintEnd_toEndOf="@+id/calendar_button"
         app:srcCompat="@drawable/ic_baseline_settings_24"
@@ -145,13 +154,13 @@
         app:fabCustomSize="56dp"
         app:maxImageSize="28dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/calender_fab_color"
+        android:backgroundTint="?attr/buttonColorAll"
         android:clickable="true"
         android:focusable="true"
         android:scaleType="fitCenter"
         android:tint="@color/white"
         android:visibility="invisible"
-        app:backgroundTint="@color/calender_fab_color"
+        app:backgroundTint="?attr/buttonColorAll"
         app:layout_constraintBottom_toTopOf="@+id/search_button"
         app:layout_constraintEnd_toEndOf="@+id/search_button"
         app:srcCompat="@drawable/ic_calen"

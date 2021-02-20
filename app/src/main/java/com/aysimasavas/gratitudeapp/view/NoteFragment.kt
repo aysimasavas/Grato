@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
@@ -24,6 +26,8 @@ class NoteFragment : Fragment() {
     private var noteModels: NoteModel? = null
     private lateinit var noteViewModel: NoteViewModel
     var index=0
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_open_anim)}
+    private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_close_anim)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,6 +116,7 @@ class NoteFragment : Fragment() {
 
         suggestionButton.setOnClickListener {
 
+            suggestionButton.startAnimation(rotateOpen)
             val suggestions = resources.getStringArray(R.array.suggestion)
             noteText.hint=suggestions[index]
             index++
@@ -126,34 +131,22 @@ class NoteFragment : Fragment() {
 
     private fun shareOnClick(){
 
+        shareImage.setOnClickListener {
 
-        shareButton.setOnClickListener {
-            val sendIntent: Intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, noteModels!!.note)
-                type = "text/plain"
-            }
 
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT,"${dateText.text} \n"+"${textTittle.text} " + noteModels!!.note)
+                    type = "text/plain"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+
+
         }
 
 
     }
-//
-//    private fun textChange()
-//    {
-//        if(noteText.text.equals(""))
-//        {
-//            suggestionButton.visibility=View.VISIBLE
-//            shareButton.visibility=View.INVISIBLE
-//        }
-//        else
-//        {
-//            suggestionButton.visibility=View.INVISIBLE
-//            shareButton.visibility=View.VISIBLE
-//
-//        }
-//    }
 
 }

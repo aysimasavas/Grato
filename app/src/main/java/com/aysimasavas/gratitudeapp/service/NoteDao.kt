@@ -31,6 +31,4 @@ interface NoteDao {
     fun getSearchResults(note : String) : List<NoteModel>
 
 
-
-
 }

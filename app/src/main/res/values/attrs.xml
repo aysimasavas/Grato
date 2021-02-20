@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr
+        name= "textColorAll"
+        format="color">
+
+    </attr>
+
+    <attr
+        name= "BackgroundColorAll"
+        format="color">
+
+    </attr>
+
+    <attr
+        name= "IconColorAll"
+        format="color">
+
+    </attr>
+    <attr
+        name= "BackgroundLightColor"
+        format="color">
+
+    </attr>
+
+
+    <attr
+        name= "askIconColor"
+        format="color">
+
+    </attr>
+
+
+    <attr name="buttonColorAll"
+        format="color">
+
+    </attr>
+
+    <attr name="CalendarTextColor"
+        format="color">
+    </attr>
+
+    <attr name="HintTextColor"
+        format="color">
+    </attr>
+</resources>

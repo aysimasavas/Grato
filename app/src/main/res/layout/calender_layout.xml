@@ -18,15 +18,18 @@
         android:backgroundTint="@color/black"
         android:dateTextAppearance="@style/CalenderViewDateCustomText"
         android:scrollbarTrackHorizontal="@color/black"
-        android:selectedDateVerticalBar="@color/home_color_icon"
-        android:selectedWeekBackgroundColor="#FFFFFF"
+        android:selectedDateVerticalBar="@color/white"
+        android:selectedWeekBackgroundColor="@color/white"
+
         android:theme="@style/CalenderViewCustom"
+
         android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
-        android:weekSeparatorLineColor="#FFFFFF"
+        android:weekSeparatorLineColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.268"
-        tools:layout_editor_absoluteX="54dp" />
+        tools:layout_editor_absoluteX="54dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/noBtn"
@@ -34,13 +37,13 @@
         android:layout_height="26dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/button_custom"
-        android:backgroundTint="#E91E63"
+        android:backgroundTint="?attr/buttonColorAll"
         android:text="@string/noButtonString"
+        android:fontFamily="@font/didact_gothic"
 
         android:textColor="@color/white"
-        android:textColorLink="#FFFFFF"
         android:textSize="14sp"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="@+id/calendarView2"
         app:layout_constraintEnd_toEndOf="@+id/calendarView2"
         app:layout_constraintHorizontal_bias="0.52"

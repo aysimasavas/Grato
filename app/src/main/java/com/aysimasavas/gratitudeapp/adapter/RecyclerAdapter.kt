@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.aysimasavas.gratitudeapp.R
 import com.aysimasavas.gratitudeapp.helpers.DateFormatHelper
@@ -38,6 +39,7 @@ class RecyclerAdapter (private val noteList: ArrayList<NoteModel>,private val li
             itemView.gratitude_text.text=noteModel.note
 
 
+
         }
     }
 
@@ -48,6 +50,7 @@ class RecyclerAdapter (private val noteList: ArrayList<NoteModel>,private val li
 
     override fun onBindViewHolder(holder: RowHolder, position: Int) {
         holder.bind(noteList[position],position,listener)
+        holder.itemView.animation=AnimationUtils.loadAnimation(holder.itemView.context, R.anim.recycler_anim)
     }
 
     override fun getItemCount(): Int {

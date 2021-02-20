@@ -16,6 +16,7 @@ import android.widget.CalendarView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aysimasavas.gratitudeapp.R
@@ -45,6 +46,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
     private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.from_bottom_anim)}
     private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.to_bottom_anim)}
 
+
     private var clicked=false
 
 
@@ -66,6 +68,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
+
 
         getQuotations()
 
@@ -127,6 +130,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
     private fun calendarButtonClick()
     {
+
+
         calendar_button.setOnClickListener {
 
             onCalendarClicked()
@@ -148,6 +153,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
 
             calendarView1.setOnDateChangeListener { view, year, month, dayOfMonth ->
+
 
                 val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(dayOfMonth,month,year,"new","")
                 Navigation.findNavController(it).navigate(action)
