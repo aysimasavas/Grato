@@ -38,8 +38,8 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/button_custom"
         android:backgroundTint="?attr/buttonColorAll"
+        android:fontFamily="@font/armata"
         android:text="@string/noButtonString"
-        android:fontFamily="@font/didact_gothic"
 
         android:textColor="@color/white"
         android:textSize="14sp"

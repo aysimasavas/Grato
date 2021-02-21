@@ -43,4 +43,12 @@
     <attr name="HintTextColor"
         format="color">
     </attr>
+
+    <attr name="themeIcon"
+        format="reference">
+    </attr>
+
+    <attr name="shareIconColor"
+        format="color">
+    </attr>
 </resources>

@@ -18,49 +18,72 @@
         android:orientation="vertical"
         android:padding="20dp"
         tools:ignore="MissingConstraints">
-        
+
 
         <LinearLayout
-            android:id="@+id/linearLayoutRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
+            android:orientation="horizontal"
+            android:id="@+id/linearOut">
 
-            <TextView
-                android:id="@+id/note_date_text_home"
-                android:layout_width="match_parent"
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRow"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/note_date_text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/didact_gothic"
+                    android:text="16 02 2021"
+                    android:textColor="?attr/textColorAll"
+                    android:textSize="20sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/gratitude_text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="?attr/textColorAll"
+                    android:fontFamily="@font/didact_gothic"
+                    android:text="Bugün ne için minnettarsın?"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/didact_gothic"
-                android:text="16 02 2021"
-                android:textColor="?attr/textColorAll"
-                android:textSize="20sp"
-                android:textStyle="bold">
+                android:layout_weight="6"
+                android:src="?attr/themeIcon"
 
-            </TextView>
+                >
 
-        <TextView
-            android:id="@+id/gratitude_text_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textColor="?attr/textColorAll"
-            android:fontFamily="@font/didact_gothic"
-            android:text="Bugün ne için minnettarsın?"
-            android:textSize="16sp"
-            android:textStyle="bold">
-
-        </TextView>
+            </ImageView>
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/text_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayoutRow"
+            android:layout_below="@id/linearOut"
             android:fontFamily="@font/marmelad"
             android:padding="24dp"
 

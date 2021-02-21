@@ -21,6 +21,8 @@
         <item name="BackgroundColorAll">#263238</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
+        <item name="themeIcon">@drawable/grenm</item>
+        <item name="shareIconColor">#eceff1</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -51,7 +53,9 @@
         <item name="askIconColor">#7e57c2</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
+        <item name="themeIcon">@drawable/violetic</item>
 
+        <item name="shareIconColor">#eceff1</item>
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
         <!-- Customize your theme here. -->
@@ -61,7 +65,7 @@
     <style name="OrangeCake" parent="Theme.GratitudeApp">
         <!-- Primary brand color. -->
 
-        <item name="colorPrimaryVariant">@color/purple_500</item>
+        <item name="colorPrimaryVariant">#ff9800</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorAccent">#ff9800</item>
         <item name="colorSecondary">@color/white</item>
@@ -80,6 +84,8 @@
         <item name="askIconColor">#ff9800</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
+        <item name="themeIcon">@drawable/orangem</item>
+        <item name="shareIconColor">#eceff1</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -109,6 +115,8 @@
         <item name="askIconColor">#42a5f5</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
+        <item name="themeIcon">@drawable/depblue</item>
+        <item name="shareIconColor">#eceff1</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -137,6 +145,8 @@
         <item name="askIconColor">#a5d6a7</item>
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
+        <item name="themeIcon">@drawable/serenity</item>
+        <item name="shareIconColor">#8d8d8d</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -167,6 +177,8 @@
         <item name="HintTextColor">#728D8D8D</item>
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
+        <item name="themeIcon">@drawable/swetdream</item>
+        <item name="shareIconColor">#8d8d8d</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -197,6 +209,8 @@
         <item name="HintTextColor">#728D8D8D</item>
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
+        <item name="themeIcon">@drawable/cofe</item>
+        <item name="shareIconColor">#8d8d8d</item>
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>

@@ -25,9 +25,7 @@ class NoteFragment : Fragment() {
     private var isEdit: Boolean? = null
     private var noteModels: NoteModel? = null
     private lateinit var noteViewModel: NoteViewModel
-    var index=0
-    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_open_anim)}
-    private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_close_anim)}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,29 +103,14 @@ class NoteFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
 
         }
-        suggestionOnClick()
+
         shareOnClick()
 
 
     }
 
 
-    private fun suggestionOnClick(){
 
-        suggestionButton.setOnClickListener {
-
-            suggestionButton.startAnimation(rotateOpen)
-            val suggestions = resources.getStringArray(R.array.suggestion)
-            noteText.hint=suggestions[index]
-            index++
-            if(index==suggestions.size)
-            {
-                index=0
-            }
-
-        }
-
-    }
 
     private fun shareOnClick(){
 

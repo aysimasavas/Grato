@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
+    android:background="@drawable/calender_custom"
     app:layout_constraintCircleRadius="20dp">
+
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="318dp"
-        android:layout_height="542dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
         android:background="?attr/BackgroundLightColor"
         android:columnCount="2"
-        android:rowCount="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+
+        android:rowCount="3">
 
 
         <ImageView
@@ -31,7 +28,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/orange">
+            android:src="@drawable/boardorange">
 
         </ImageView>
 
@@ -42,7 +39,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/purple">
+            android:src="@drawable/boardpurple">
 
         </ImageView>
 
@@ -53,7 +50,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/gren">
+            android:src="@drawable/boardgren">
 
         </ImageView>
 
@@ -64,7 +61,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/blue">
+            android:src="@drawable/boardblue">
 
         </ImageView>
 
@@ -75,7 +72,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/pink">
+            android:src="@drawable/boardpink">
 
         </ImageView>
 
@@ -87,7 +84,7 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/brown">
+            android:src="@drawable/boardcofe">
 
         </ImageView>
 
@@ -98,10 +95,10 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/mint">
+            android:src="@drawable/boardmint">
 
         </ImageView>
 
     </GridLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
