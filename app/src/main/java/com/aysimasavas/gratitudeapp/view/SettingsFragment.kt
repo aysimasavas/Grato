@@ -93,11 +93,13 @@ class SettingsFragment : Fragment() {
         if (dialog != null) {
             sweetBrownyThemeOnClick(dialog)
         }
+        if (dialog != null) {
+            sunLightThemeOnClick(dialog)
+        }
 
+        val backButton = dialog?.findViewById(R.id.themeBackButton) as TextView
 
-//        val noBtn = dialog?.findViewById(R.id.noBtn) as TextView
-//
-//        noBtn.setOnClickListener { dialog.dismiss() }
+        backButton.setOnClickListener { dialog.dismiss() }
 
 
         dialog?.show()
@@ -118,6 +120,7 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
 
     }
@@ -132,6 +135,7 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
 
     }
@@ -145,6 +149,7 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
 
     }
@@ -158,6 +163,7 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
     }
     fun orangeCakeThemeOnClick(dialog: Dialog)
@@ -171,6 +177,7 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
     }
     fun serenityThemeOnClick(dialog: Dialog)
@@ -184,8 +191,10 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
     }
+
     fun greenThemeOnClick(dialog: Dialog)
     {
 
@@ -196,8 +205,27 @@ class SettingsFragment : Fragment() {
 
             activity?.finish()
             startActivity(intent)
+            dialog.dismiss()
         }
     }
+
+
+    fun sunLightThemeOnClick(dialog: Dialog)
+    {
+
+        dialog.findViewById<ImageView>(R.id.sunLight).sunLight.setOnClickListener {
+            sharedPreferences.edit().putString(themeKey, "sunLight").apply()
+
+            val intent =Intent(activity,MainActivity::class.java)
+
+            activity?.finish()
+            startActivity(intent)
+            dialog.dismiss()
+        }
+    }
+
+
+
 
 
 

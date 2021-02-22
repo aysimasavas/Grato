@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">grays</string>
+    <string name="app_name">Grato</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="noButtonString">geri</string>
@@ -15,25 +15,7 @@
     <string name="pinText">Pin koyarak notlarını gizleyebilirsin</string>
     <string name="themeText">Birbirinden farklı tema seçenekleri</string>
 
-    <string-array name="suggestion">
-        <item>Hangi arkadaşın için minnetarsın?</item>
-        <item>Hangi kitap için minnetarsın?</item>
-        <item>Hangi ses için minnetarsın?</item>
-        <item>Seni heyecanlandıran şey nedir?</item>
-        <item>Seni umutlandıran şey nedir?</item>
-        <item>Hangi yeteneğin için minnetarsın?</item>
-        <item>Hangi tavsiye için minnetarsın?</item>
-        <item>Seni gururlandıran şey nedir?</item>
-        <item>Hangi koku için minnettarsın?</item>
-        <item>Hangi tat için minnettarsın?</item>
-        <item>Hangi şarkı için minnettarsın?</item>
-        <item>Sana ilham veren söz nedir?</item>
-        <item>Hangi anın için minnetarsın?</item>
-        <item>Sana değer veren kişi kim?</item>
-        <item>Sana ilham veren kişi kim?</item>
-        <item>Gününü güzelleştiren şey neydi?</item>
-        <item>Kariyerinle ilgili minnet duyduğun şey nedir?</item>
-    </string-array>
+
 
     <string-array name="quotations">
 
@@ -52,6 +34,12 @@
         <item>Tüm sanatların özü minnettarlıktır \nNietzsche</item>
         <item>Minnettarlık,hafızanın akılda değil kalpte saklandığı zamandır \nLionel Hampton</item>
         <item>Anılar,yalnızken kalbi sıcak tutmak için ruhumuzun deposunda hapsolmuş hazinelerdir \n Becky Aligada</item>
-
+        <item>İnsan sahip olduklarının toplamı değil, fakat henüz gerçekleştiremediklerinin toplamıdır \n Jean-Paul Sartre</item>
+        <item>Zenginlik ve güzellikle birlikte bulunan ihtişam geçicidir ve kolay zedelenebilir. Erdemse muhteşem ve ölümsüz bir servettir \n Sallust </item>
+        <item>Sizi korkutan her deyim size güç, cesaret ve güven kazandırır. Kendinize “Ben bu dehşeti yaşadım. Bundan sonra gelecek şeylere hazırım” dersiniz \n Eleanor Roosevelt </item>
+        <item>Yeterince sevginiz varsa dünyada ki en mutlu ve en güçlü insan olursunuz \n Dr. Emmet Fox</item>
+        <item>Güçlükler başarının değerini artıran süslerdir \n Moliere</item>
+        <item>Gülümseyin: öyle samimi ve sıcak olun ki her sıktığınız ele, ruhunuzu da katın \n Dale Carnegie</item>
+        <item>Demir mıknatısa aşıktır, hep ona doğru koşar, zafer de sabra aşıktır ve devamlı ona koşar \n Sühreverdi</item>
     </string-array>
 </resources>

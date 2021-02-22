@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             "green" -> theme.applyStyle(R.style.Theme_GratitudeApp, true)
             "sweetDreams" -> theme.applyStyle(R.style.SweetDreams, true)
             "sweetBrowny" -> theme.applyStyle(R.style.SweetBrowny, true)
+            "sunLight" -> theme.applyStyle(R.style.sunLight, true)
         }
 
 

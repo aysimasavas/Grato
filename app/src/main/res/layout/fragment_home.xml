@@ -54,6 +54,7 @@
                     android:id="@+id/gratitude_text_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxLength="30"
                     android:layout_margin="10dp"
                     android:textColor="?attr/textColorAll"
                     android:fontFamily="@font/didact_gothic"
@@ -85,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/linearOut"
             android:fontFamily="@font/marmelad"
-            android:padding="24dp"
+            android:padding="30dp"
 
             android:text="aaaaaaaa"
 

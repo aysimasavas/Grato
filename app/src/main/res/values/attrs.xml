@@ -23,14 +23,6 @@
 
     </attr>
 
-
-    <attr
-        name= "askIconColor"
-        format="color">
-
-    </attr>
-
-
     <attr name="buttonColorAll"
         format="color">
 

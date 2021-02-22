@@ -16,13 +16,13 @@
 
         <item name="textColorAll">#eceff1</item>
         <item name="buttonColorAll">#4caf50</item>
-        <item name="askIconColor">#4caf50</item>
         <item name="HintTextColor">#B5ECEFF1</item>
         <item name="BackgroundColorAll">#263238</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
         <item name="themeIcon">@drawable/grenm</item>
         <item name="shareIconColor">#eceff1</item>
+
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -50,10 +50,10 @@
         <item name="textColorAll">#eceff1</item>
         <item name="HintTextColor">#B5ECEFF1</item>
         <item name="buttonColorAll">#7e57c2</item>
-        <item name="askIconColor">#7e57c2</item>
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
         <item name="themeIcon">@drawable/violetic</item>
+
 
         <item name="shareIconColor">#eceff1</item>
 
@@ -81,11 +81,12 @@
         <item name="textColorAll">#eceff1</item>
         <item name="HintTextColor">#B5ECEFF1</item>
         <item name="buttonColorAll">#ff9800</item>
-        <item name="askIconColor">#ff9800</item>
+
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
         <item name="themeIcon">@drawable/orangem</item>
         <item name="shareIconColor">#eceff1</item>
+
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -112,11 +113,12 @@
         <item name="textColorAll">#eceff1</item>
         <item name="buttonColorAll">#42a5f5</item>
         <item name="HintTextColor">#B5ECEFF1</item>
-        <item name="askIconColor">#42a5f5</item>
+
         <item name="BackgroundLightColor">#62727b</item>
         <item name="CalendarTextColor">@color/white</item>
         <item name="themeIcon">@drawable/depblue</item>
         <item name="shareIconColor">#eceff1</item>
+
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -142,11 +144,12 @@
         <item name="textColorAll">#8d8d8d</item>
         <item name="HintTextColor">#728D8D8D</item>
         <item name="buttonColorAll">#a5d6a7</item>
-        <item name="askIconColor">#a5d6a7</item>
+
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
         <item name="themeIcon">@drawable/serenity</item>
         <item name="shareIconColor">#8d8d8d</item>
+
 
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
@@ -173,13 +176,12 @@
         <item name="BackgroundColorAll">#ffffff</item>
         <item name="textColorAll">#8d8d8d</item>
         <item name="buttonColorAll">#ef9a9a</item>
-        <item name="askIconColor">#ef9a9a</item>
+
         <item name="HintTextColor">#728D8D8D</item>
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
         <item name="themeIcon">@drawable/swetdream</item>
         <item name="shareIconColor">#8d8d8d</item>
-
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
         <!-- Customize your theme here. -->
@@ -205,7 +207,6 @@
         <item name="BackgroundColorAll">#ffffff</item>
         <item name="textColorAll">#8d8d8d</item>
         <item name="buttonColorAll">#d6cbc7</item>
-        <item name="askIconColor">#d6cbc7</item>
         <item name="HintTextColor">#728D8D8D</item>
         <item name="BackgroundLightColor">#fafafa</item>
         <item name="CalendarTextColor">#8d8d8d</item>
@@ -218,21 +219,56 @@
     </style>
 
 
+    <style name="sunLight" parent="Theme.GratitudeApp">
+        <!-- Primary brand color. -->
+
+        <item name="colorPrimaryVariant">#FFD347</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">#FFD347</item>
+        <item name="colorSecondary">#FFD347</item>
+        <!-- Secondary brand color. -->
+
+        <item name="colorSecondaryVariant">#c48b9f</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="BackgroundColorAll">#ffffff</item>
+        <item name="textColorAll">#8d8d8d</item>
+        <item name="buttonColorAll">#FFD347</item>
+
+        <item name="HintTextColor">#728D8D8D</item>
+        <item name="BackgroundLightColor">#fafafa</item>
+        <item name="CalendarTextColor">#8d8d8d</item>
+        <item name="themeIcon">@drawable/sun</item>
+        <item name="shareIconColor">#8d8d8d</item>
+
+
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/BackgroundColorAll</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
     <style name="CalenderViewCustom" parent="Theme.AppCompat">
         <item name="colorAccent">?attr/buttonColorAll</item>
         <item name="colorPrimary">@color/white</item>
+        <item name="android:textColorPrimary">?attr/CalendarTextColor</item>
 
     </style>
     <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
         <item name="android:textColor">?attr/CalendarTextColor</item>
         <item name="android:weekNumberColor">?attr/CalendarTextColor</item>
         <item name="colorPrimary">?attr/CalendarTextColor</item>
+        <item name="android:textColorPrimary">?attr/CalendarTextColor</item>
 
     </style>
 
     <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
         <item name="android:textColor">?attr/CalendarTextColor</item>
         <item name="colorPrimary">?attr/CalendarTextColor</item>
+        <item name="android:textColorPrimary">?attr/CalendarTextColor</item>
     </style>
 
 </resources>
