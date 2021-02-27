@@ -119,7 +119,7 @@ class NoteFragment : Fragment() {
 
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT,"${dateText.text} \n"+"${textTittle.text} " + noteModels!!.note)
+                    putExtra(Intent.EXTRA_TEXT,"${dateText.text} \n"+"${textTittle.text} " + noteText.text.toString())
                     type = "text/plain"
                 }
 

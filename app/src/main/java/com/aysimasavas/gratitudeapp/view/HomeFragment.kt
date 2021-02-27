@@ -2,7 +2,6 @@ package com.aysimasavas.gratitudeapp.view
 
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,9 +13,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.CalendarView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aysimasavas.gratitudeapp.R
@@ -24,7 +21,6 @@ import com.aysimasavas.gratitudeapp.adapter.RecyclerAdapter
 import com.aysimasavas.gratitudeapp.helpers.DateFormatHelper
 import com.aysimasavas.gratitudeapp.model.NoteModel
 import com.aysimasavas.gratitudeapp.service.NoteDatabase
-import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.calender_layout.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -34,7 +30,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 @Suppress("DEPRECATION")
-class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
+class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
 
 
     private var noteModels:ArrayList<NoteModel>?=null
@@ -72,6 +68,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
         getQuotations()
 
+
         val layoutManager: RecyclerView.LayoutManager=LinearLayoutManager(this.context)
         recyclerView.layoutManager=layoutManager
         noteModels= ArrayList()
@@ -95,7 +92,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
             aList.remove(noteModelToday)
 
         }
-        recyclerAdapter=aList?.let { RecyclerAdapter( it,this@HomeFragment) }
+        recyclerAdapter= aList.let { RecyclerAdapter( it,this@HomeFragment) }
         recyclerView.adapter=recyclerAdapter
 
 
@@ -135,6 +132,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
         calendar_button.setOnClickListener {
 
             onCalendarClicked()
+            
+
 
             val dialog = activity?.let { it1 -> Dialog(it1) }
             dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -145,6 +144,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
             dialog?.window?.setBackgroundDrawable(ColorDrawable(this.resources.getColor(android.R.color.transparent)))
 
 
+            dialog?.setCancelable(true)
             val calendarView1=dialog?.findViewById(R.id.calendarView2) as CalendarView
 
 
@@ -158,9 +158,10 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
                 val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(dayOfMonth,month,year,"new","")
                 Navigation.findNavController(it).navigate(action)
 
+                clicked=false
                 dialog.dismiss()
 
-                clicked=false
+
             }
 
             val noBtn = dialog.findViewById(R.id.noBtn) as TextView
@@ -358,5 +359,7 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener{
 
         text_home.text=randomQuotations
     }
+
+
 }
 

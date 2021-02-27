@@ -2,29 +2,12 @@ package com.aysimasavas.gratitudeapp.view
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.Toast
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.aysimasavas.gratitudeapp.R
 
-import kotlinx.android.synthetic.main.activity_main.*
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
 
         lateinit var sharedPreferences: SharedPreferences
@@ -43,21 +26,24 @@ class MainActivity : AppCompatActivity() {
         )
 
 
-        when (sharedPreferences.getString(themeKey, "purple")) {
+        
+
+        when (sharedPreferences.getString(themeKey, "sunLight")) {
             "serenity" -> theme.applyStyle(R.style.Serenity, true)
             "violetGarden" -> theme.applyStyle(R.style.VioletGarden, true)
             "orangeCake" -> theme.applyStyle(R.style.OrangeCake, true)
             "deepBlue" -> theme.applyStyle(R.style.DeepBlue, true)
-            "green" -> theme.applyStyle(R.style.Theme_GratitudeApp, true)
+            "green" -> theme.applyStyle(R.style.greenDark, true)
             "sweetDreams" -> theme.applyStyle(R.style.SweetDreams, true)
             "sweetBrowny" -> theme.applyStyle(R.style.SweetBrowny, true)
-            "sunLight" -> theme.applyStyle(R.style.sunLight, true)
+            "sunLight" -> theme.applyStyle(R.style.Theme_GratitudeApp, true)
         }
 
 
         setContentView(R.layout.activity_main)
 
     }
+
 
 
 }

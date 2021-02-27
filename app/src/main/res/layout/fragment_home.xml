@@ -20,7 +20,7 @@
         tools:ignore="MissingConstraints">
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -29,18 +29,22 @@
 
             <LinearLayout
                 android:id="@+id/linearLayoutRow"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="64dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:orientation="vertical"
+
                 android:clickable="true"
                 android:focusable="true">
 
                 <TextView
                     android:id="@+id/note_date_text_home"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:padding="10dp"
                     android:fontFamily="@font/didact_gothic"
                     android:text="16 02 2021"
                     android:textColor="?attr/textColorAll"
@@ -52,33 +56,32 @@
 
                 <TextView
                     android:id="@+id/gratitude_text_home"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="30"
-                    android:layout_margin="10dp"
-                    android:textColor="?attr/textColorAll"
+
+                    android:padding="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:fontFamily="@font/didact_gothic"
                     android:text="Bugün ne için minnettarsın?"
+                    android:textColor="?attr/textColorAll"
                     android:textSize="16sp"
                     android:textStyle="bold">
 
                 </TextView>
-
-
-
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/image"
                 android:layout_width="64dp"
                 android:layout_height="80dp"
-                android:layout_margin="10dp"
-                android:layout_weight="6"
-                android:src="?attr/themeIcon"
-
-                >
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="?attr/themeIcon">
 
             </ImageView>
-        </LinearLayout>
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/text_home"

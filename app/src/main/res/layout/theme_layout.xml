@@ -11,6 +11,7 @@
     app:layout_constraintCircleRadius="20dp">
 
 
+
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
@@ -19,25 +20,40 @@
         android:background="?attr/BackgroundLightColor"
         android:columnCount="2"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
 
         android:rowCount="3">
 
-
-        <ImageView
-            android:id="@+id/orangeCake"
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/boardorange">
 
-        </ImageView>
+            app:cardCornerRadius="8dp">
+            <ImageView
+                android:id="@+id/orangeCake"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/boardorange">
+
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
 
         <ImageView
             android:id="@+id/violetGarden"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -45,10 +61,18 @@
 
         </ImageView>
 
-        <ImageView
-            android:id="@+id/green"
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/green"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -56,33 +80,55 @@
 
         </ImageView>
 
-        <ImageView
-            android:id="@+id/deepBlue"
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/deepBlue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/boardblue">
 
         </ImageView>
+        </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/sweetDreams"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/sweetDreams"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/boardpink">
 
         </ImageView>
+        </androidx.cardview.widget.CardView>
 
 
-        <ImageView
-            android:id="@+id/sweetBrowny"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/sweetBrowny"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -90,10 +136,19 @@
 
         </ImageView>
 
-        <ImageView
-            android:id="@+id/serenity"
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:id="@+id/serenity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -101,11 +156,18 @@
 
         </ImageView>
 
+        </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/sunLight"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="8dp">
+        <ImageView
+            android:id="@+id/sunLight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
@@ -113,23 +175,7 @@
 
         </ImageView>
 
+        </androidx.cardview.widget.CardView>
     </GridLayout>
-
-    <Button
-        android:id="@+id/themeBackButton"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="1"
-
-        android:background="@drawable/button_custom"
-        android:backgroundTint="?attr/buttonColorAll"
-        android:text="Geri"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
 
 </LinearLayout>

@@ -5,27 +5,25 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.CalendarView
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.Navigation
+import android.widget.*
 import com.aysimasavas.gratitudeapp.R
 
 import kotlinx.android.synthetic.main.fragment_settings.*
-import kotlinx.android.synthetic.main.theme_layout.*
 import kotlinx.android.synthetic.main.theme_layout.view.*
-import java.util.*
 
 class SettingsFragment : Fragment() {
 
     lateinit var sharedPreferences: SharedPreferences
     val themeKey="currentTheme"
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +43,10 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
+
+
+
         sharedPreferences = requireActivity().getSharedPreferences(
                 "ThemePref",
                 Context.MODE_PRIVATE
@@ -54,6 +56,15 @@ class SettingsFragment : Fragment() {
         themeText.setOnClickListener {
 
             themeTextOnClick()
+        }
+
+
+        contactUsText.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:aysimasavas1@gmail.com?subject=GratoFeedback")
+
+            }
+            startActivity(Intent.createChooser(emailIntent, "Send feedback"))
         }
 
 
@@ -70,7 +81,7 @@ class SettingsFragment : Fragment() {
         dialog?.setContentView(R.layout.theme_layout)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(this.resources.getColor(android.R.color.transparent)))
 
-
+        dialog?.setCancelable(true)
 
         if (dialog != null) {
             sweetDreamsThemeOnClick(dialog)
@@ -97,9 +108,6 @@ class SettingsFragment : Fragment() {
             sunLightThemeOnClick(dialog)
         }
 
-        val backButton = dialog?.findViewById(R.id.themeBackButton) as TextView
-
-        backButton.setOnClickListener { dialog.dismiss() }
 
 
         dialog?.show()
@@ -223,10 +231,6 @@ class SettingsFragment : Fragment() {
             dialog.dismiss()
         }
     }
-
-
-
-
 
 
 }

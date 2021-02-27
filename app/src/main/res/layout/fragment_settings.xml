@@ -52,45 +52,6 @@
         </TextView>
 
 
-    <TextView
-            android:id="@+id/securityTittleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/didact_gothic"
-            android:text="Güvenlik"
-            android:textStyle="bold"
-            android:textColor="?attr/textColorAll"
-            android:textSize="25sp">
-        </TextView>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="3dp"
-            android:layout_marginStart="20dp"
-            android:layout_below="@id/securityTittleText"
-            android:background="?attr/buttonColorAll"></View>
-
-
-        <TextView
-            android:id="@+id/securityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/didact_gothic"
-            android:text="@string/pinText"
-            android:textColor="?attr/textColorAll"
-            android:textSize="20sp">
-
-        </TextView>
-
-
-
 
             <TextView
                 android:id="@+id/AppTitleText"
@@ -111,16 +72,18 @@
             android:layout_width="wrap_content"
             android:layout_height="3dp"
             android:layout_marginStart="20dp"
-            android:layout_below="@id/securityTittleText"
+            android:layout_below="@id/AppTitleText"
             android:background="?attr/buttonColorAll"></View>
 
 
         <TextView
-                android:id="@+id/aboutText"
+                android:id="@+id/contactUsText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:fontFamily="@font/didact_gothic"
                 android:text="@string/connectMe"
                 android:textColor="?attr/textColorAll"
