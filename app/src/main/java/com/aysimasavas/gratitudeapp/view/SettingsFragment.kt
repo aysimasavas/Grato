@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.*
 import com.aysimasavas.gratitudeapp.R
+import kotlinx.android.synthetic.main.fragment_note.*
 
 import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.theme_layout.view.*
@@ -43,10 +44,6 @@ class SettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-
-
-
-
         sharedPreferences = requireActivity().getSharedPreferences(
                 "ThemePref",
                 Context.MODE_PRIVATE
@@ -61,11 +58,34 @@ class SettingsFragment : Fragment() {
 
         contactUsText.setOnClickListener {
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:aysimasavas1@gmail.com?subject=GratoFeedback")
+                data = Uri.parse("mailto:app.info.as@gmail.com?subject=GratoFeedback")
 
             }
             startActivity(Intent.createChooser(emailIntent, "Send feedback"))
         }
+
+
+        rateText.setOnClickListener {
+
+            val shareIntent=Intent(Intent.ACTION_VIEW).apply {
+                data=Uri.parse("https://play.google.com/store/apps/details?id=com.aysimasavas.gratitudeapp")
+
+            }
+            startActivity(shareIntent)
+        }
+
+        shareUsText.setOnClickListener {
+
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT,"https://play.google.com/store/apps/details?id=com.aysimasavas.gratitudeapp")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+
 
 
     }
@@ -109,9 +129,7 @@ class SettingsFragment : Fragment() {
         }
 
 
-
         dialog?.show()
-
 
 
     }

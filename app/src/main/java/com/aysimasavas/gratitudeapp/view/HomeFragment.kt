@@ -35,8 +35,6 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
 
     private var noteModels:ArrayList<NoteModel>?=null
     private var recyclerAdapter:RecyclerAdapter?=null
-
-    
     private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_open_anim)}
     private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.rotate_close_anim)}
     private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this.context,R.anim.from_bottom_anim)}
@@ -48,7 +46,6 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -64,10 +61,8 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-
-
+        
         getQuotations()
-
 
         val layoutManager: RecyclerView.LayoutManager=LinearLayoutManager(this.context)
         recyclerView.layoutManager=layoutManager
@@ -94,8 +89,6 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
         }
         recyclerAdapter= aList.let { RecyclerAdapter( it,this@HomeFragment) }
         recyclerView.adapter=recyclerAdapter
-
-
 
         addButtonClick()
         searchButtonClick()
@@ -128,16 +121,12 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
     private fun calendarButtonClick()
     {
 
-
         calendar_button.setOnClickListener {
 
             onCalendarClicked()
-            
-
 
             val dialog = activity?.let { it1 -> Dialog(it1) }
             dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-
 
             dialog?.setCancelable(false)
             dialog?.setContentView(R.layout.calender_layout)
@@ -147,13 +136,9 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
             dialog?.setCancelable(true)
             val calendarView1=dialog?.findViewById(R.id.calendarView2) as CalendarView
 
-
-
             calendarView1.maxDate=Date().time
 
-
             calendarView1.setOnDateChangeListener { view, year, month, dayOfMonth ->
-
 
                 val action=HomeFragmentDirections.actionHomeFragmentToNoteFragment(dayOfMonth,month,year,"new","")
                 Navigation.findNavController(it).navigate(action)
@@ -161,16 +146,13 @@ class HomeFragment : Fragment() ,RecyclerAdapter.Listener {
                 clicked=false
                 dialog.dismiss()
 
-
             }
 
             val noBtn = dialog.findViewById(R.id.noBtn) as TextView
 
             noBtn.setOnClickListener { dialog.dismiss() }
-
-
+            
             dialog.show()
-
 
         }
     }

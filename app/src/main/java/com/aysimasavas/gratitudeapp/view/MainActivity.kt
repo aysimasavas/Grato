@@ -9,9 +9,8 @@ import com.aysimasavas.gratitudeapp.R
 
 class MainActivity : AppCompatActivity(){
 
-
-        lateinit var sharedPreferences: SharedPreferences
-        val themeKey="currentTheme"
+    lateinit var sharedPreferences: SharedPreferences
+    val themeKey="currentTheme"
 
 
 
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity(){
         )
 
 
-        
+
 
         when (sharedPreferences.getString(themeKey, "sunLight")) {
             "serenity" -> theme.applyStyle(R.style.Serenity, true)
@@ -40,7 +39,9 @@ class MainActivity : AppCompatActivity(){
         }
 
 
-        setContentView(R.layout.activity_main)
+
+       setContentView(R.layout.activity_main)
+
 
     }
 
